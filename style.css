@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
+
+:root {
+  --black: #080a0c;
+  --white: #ffffff;
+  --silver: #dce6ed;
+  --silver-dark: #8696a3;
+  --glass-dark: rgba(6, 9, 12, .72);
+  --glass-light: rgba(235, 242, 247, .15);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: "Montserrat", Arial, sans-serif;
+  color: var(--white);
+  overflow-x: hidden;
+  background: var(--black);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image: url("assets/yaqi-background.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(4,7,10,.35), rgba(4,7,10,.55));
+}
+
+a { color: inherit; }
+
+img { display: block; max-width: 100%; }
+
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  min-height: 82px;
+  padding: 16px clamp(22px, 4vw, 64px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: linear-gradient(180deg, rgba(4,7,10,.55), rgba(4,7,10,0));
+}
+
+.wordmark {
+  font-weight: 900;
+  letter-spacing: .35em;
+  font-size: 15px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.wordmark span { color: var(--silver-dark); }
+
+.site-header nav {
+  display: flex;
+  gap: clamp(14px, 3vw, 34px);
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.site-header nav a {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .22em;
+  color: var(--silver);
+}
+
+.site-header nav a:hover { color: var(--white); }
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 22px 40px;
+}
+
+.hero {
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 82px;
+}
+
+.kicker {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .4em;
+  color: var(--silver);
+  margin: 0 0 18px;
+}
+
+.hero h1 {
+  font-size: clamp(52px, 11vw, 118px);
+  font-weight: 900;
+  letter-spacing: .06em;
+  line-height: .95;
+  margin: 0 0 22px;
+}
+
+.hero-sub {
+  font-size: clamp(16px, 2.4vw, 21px);
+  font-weight: 500;
+  color: var(--silver);
+  max-width: 560px;
+  line-height: 1.55;
+  margin: 0 0 34px;
+}
+
+.hero-links { display: flex; gap: 14px; flex-wrap: wrap; }
+
+.btn {
+  display: inline-block;
+  padding: 13px 26px;
+  border: 1px solid var(--white);
+  background: var(--white);
+  color: var(--black);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .22em;
+  text-decoration: none;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--white);
+}
+
+.panel {
+  background: var(--glass-dark);
+  border: 1px solid var(--glass-light);
+  padding: clamp(26px, 5vw, 48px);
+  margin: 0 0 34px;
+  backdrop-filter: blur(6px);
+}
+
+.panel h2 {
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: .4em;
+  margin: 0 0 22px;
+  color: var(--silver);
+}
+
+.panel p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--silver);
+  margin: 0 0 16px;
+}
+
+.panel p:last-child { margin-bottom: 0; }
+
+.panel strong { color: var(--white); }
+
+.artist-logo {
+  width: min(420px, 80%);
+  margin: 6px 0 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 22px;
+}
+
+.release {
+  text-decoration: none;
+  display: block;
+}
+
+.release img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 1px solid var(--glass-light);
+  margin-bottom: 10px;
+}
+
+.release span {
+  display: block;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+.release small {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .25em;
+  color: var(--silver-dark);
+  margin-top: 3px;
+}
+
+.upcoming {
+  margin-top: 28px;
+  border-top: 1px solid var(--glass-light);
+  padding-top: 22px;
+}
+
+.upcoming a { color: var(--white); font-weight: 700; }
+
+.contact-lines {
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+.contact-lines a { color: var(--white); font-weight: 700; text-decoration: none; }
+
+footer {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 10px 22px 44px;
+  font-size: 11px;
+  letter-spacing: .18em;
+  color: var(--silver-dark);
+  text-align: center;
+}
