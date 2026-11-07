@@ -172,6 +172,57 @@ main {
 
 .panel strong { color: var(--white); }
 
+.news-list { display: flex; flex-direction: column; }
+
+.news-item {
+  display: block;
+  text-decoration: none;
+  padding: 20px 0;
+  border-top: 1px solid var(--glass-light);
+}
+
+.news-item:first-child { border-top: none; padding-top: 2px; }
+.news-item:last-child { padding-bottom: 2px; }
+
+.tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .3em;
+  color: var(--black);
+  background: var(--silver);
+  padding: 4px 9px;
+  margin-bottom: 11px;
+}
+
+.news-title {
+  display: block;
+  font-size: clamp(19px, 3vw, 25px);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: .01em;
+  margin-bottom: 8px;
+}
+
+.news-desc {
+  display: block;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--silver);
+  max-width: 640px;
+  margin-bottom: 8px;
+}
+
+.news-source {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .25em;
+  color: var(--silver-dark);
+}
+
+a.news-item:hover .news-title { text-decoration: underline; }
+
 .artist-logo {
   width: min(420px, 80%);
   margin: 6px 0 24px;
