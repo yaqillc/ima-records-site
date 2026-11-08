@@ -287,3 +287,36 @@ footer {
   color: var(--silver-dark);
   text-align: center;
 }
+
+/* Phone layout pass (added Nov 7, 2026) — layout only; the desktop design above is unchanged.
+   Breakpoints mirror yaqiofficial.com (780px / 420px). */
+@media (max-width: 780px) {
+  .site-header {
+    position: static;
+    padding: 14px 18px 8px;
+    gap: 10px;
+  }
+  .wordmark { font-size: 13px; letter-spacing: .28em; }
+  .site-header nav { gap: 12px; justify-content: flex-start; }
+  .site-header nav a { font-size: 11px; letter-spacing: .18em; }
+  .hero {
+    min-height: 0;
+    padding-top: 26px;
+    padding-bottom: 42px;
+  }
+  .kicker { font-size: 11px; letter-spacing: .3em; }
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .panel { margin-bottom: 26px; }
+  .contact-lines { font-size: 16px; }
+}
+
+@media (max-width: 420px) {
+  main { padding: 0 16px 32px; }
+  footer { padding: 10px 16px 36px; }
+  .wordmark { font-size: 12px; letter-spacing: .22em; }
+  .site-header nav a { font-size: 10px; letter-spacing: .14em; }
+  .kicker { font-size: 10px; letter-spacing: .22em; }
+  .grid { gap: 12px; }
+  .release span { font-size: 13px; }
+  .btn { padding: 12px 20px; }
+}
